@@ -8,12 +8,14 @@ class Paddle(Turtle):
         self.penup()
         self.goto(0, -330)
         self.setheading(90)
-        self.shapesize(stretch_wid=12, stretch_len=0.7)
+        self.shapesize(stretch_wid=9, stretch_len=0.7)
         self.shape("square")
         self.color("#8be8f1")
 
     def paddle_right(self):
-        self.setx(self.xcor() + 20)
+        if self.xcor() < 590:
+            self.setx(self.xcor() + 20)
 
     def paddle_left(self):
-        self.setx(self.xcor() - 20)
+        if -610 < self.xcor():
+            self.setx(self.xcor() - 20)
